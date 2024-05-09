@@ -54,11 +54,11 @@ class AgendaModelTest(TestCase):
         self.assertEqual(data.cpf, '12345678900')
 
 
-class AgendaFormTest(TestCase):
-    def test_unbounded_fields(self):
-        form = AgendaForm()
-        expected = ['nome', 'telefone']
-        self.assertSequenceEqual(expected, list(form.fields))
+def test_unbounded_fields(self):
+    form = AgendaForm()
+    expected = ['nome', 'telefone', 'cpf']  # Atualizado para incluir 'cpf'
+    self.assertSequenceEqual(expected, list(form.fields))
+
 
     def test_form_all_OK(self):
         dados = dict(nome='José da Silva', telefone='1999998888')
